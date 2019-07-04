@@ -19,13 +19,13 @@ describe('AppComponent', () => {
   it(`should have as title 'AngTest'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('AngTest');
+    expect(app.title).toEqual('Angular, Travis CI & Firebase Hosting');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to AngTest!');
+    expect(compiled.querySelector('h1').textContent).toContain('Angular, Travis CI & Firebase Hosting');
   });
 });
