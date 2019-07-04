@@ -11,8 +11,8 @@ script:
   - npm run lint
   - npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
   - npm run build_prod
-#deploy:
-#  skip_cleanup: true
-#  provider: firebase
-#  token:
-#    secure: ""
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: $FIREBASE_TOKEN
