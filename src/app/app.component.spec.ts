@@ -1,5 +1,7 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+
+import { UpdateService } from './services/update.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,14 +9,15 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [UpdateService],
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  it('should create the app', async(inject([UpdateService], (updateService: UpdateService) => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
+  })));
 
   it(`should have as title 'AngTest'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
