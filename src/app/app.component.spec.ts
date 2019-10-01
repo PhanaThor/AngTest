@@ -18,7 +18,7 @@ describe('AppComponent', () => {
      async(
       inject([
           UpdateService], 
-            (updateService: UpdateServicer) => {
+            (updateService: UpdateService) => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
