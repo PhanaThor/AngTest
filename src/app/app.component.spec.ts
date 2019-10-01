@@ -1,6 +1,6 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material';
 import { UpdateService } from './services/update.service';
 
 describe('AppComponent', () => {
@@ -9,17 +9,16 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      providers: [UpdateService, MatSnackBar],
+      imports: [MatSnackBarModule],
+      providers: [UpdateService],
     }).compileComponents();
   }));
 
   it('should create the app', 
      async(
       inject([
-          UpdateService, 
-          MatSnackBar], 
-            (updateService: UpdateService, 
-             matSnackBar: MatSnackBar) => {
+          UpdateService], 
+            (updateService: UpdateServicer) => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
@@ -28,10 +27,8 @@ describe('AppComponent', () => {
   it(`should have as title 'AngTest'`, 
      async(
     inject([
-      UpdateService,
-      MatSnackBar], 
-           (updateService: UpdateService, 
-            matSnackBar: MatSnackBar) => {
+      UpdateService], 
+           (updateService: UpdateService) => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Angular, Travis CI & Firebase Hosting');
@@ -40,10 +37,8 @@ describe('AppComponent', () => {
   it('should render title in a h1 tag', 
      async(
     inject([
-      UpdateService,
-      MatSnackBar], 
-           (updateService: UpdateService,
-            matSnackBar: MatSnackBar) => {
+      UpdateService], 
+           (updateService: UpdateService) => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
