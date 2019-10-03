@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UpdateService } from './services/update.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,7 @@ import { UpdateService } from './services/update.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private updateService: UpdateService)  { }
+  constructor()  { }
 
   title = 'Angular, Travis CI & Firebase Hosting';
 }
